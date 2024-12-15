@@ -12,7 +12,7 @@
 
   <script>
     // Fetch content from a Markdown file and insert it into the md-block
-    fetch('privacy_policy.md')
+    fetch('./privacy_policy.md')
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to load Markdown file');
