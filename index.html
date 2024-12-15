@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
   <title>Privacy Policy for Jordan Prayer Times</title>
-  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 <body>
-  <!-- Markdown Block -->
-  <md-block id="markdown-content"></md-block>
-
+  <div id="content"></div>
+  <script src="./marked.min.js"></script>
   <script>
-    // Fetch content from a Markdown file and insert it into the md-block
     fetch('./privacy_policy.md')
       .then(response => {
         if (!response.ok) {
@@ -21,9 +17,8 @@
       })
       .then(markdown => {
         // Inject the fetched markdown content into the md-block element
-        document.getElementById('markdown-content').textContent = markdown;
+        document.getElementById('content').innerHTML = marked.parse(markdown);
       })
-      .catch(error => console.error('Error loading Markdown file:', error));
   </script>
 </body>
 </html>
