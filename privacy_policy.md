@@ -1,4 +1,4 @@
-## **Privacy Policy for Jordan Prayer Times**
+## **Privacy Policy for Jordan Prayer Times App**
 
 **Last Updated: 18/11/2025**
 **App Version: 2.0.0**
