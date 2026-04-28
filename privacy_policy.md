@@ -1,7 +1,7 @@
 ## **Privacy Policy for Jordan Prayer Times App**
 
-**Last Updated: 18/11/2025**
-**App Version: 2.0.0**
+**Last Updated: 28/04/2026**
+**App Version: 2.3.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
 
 Thank you for using the **Jordan Prayer Times** app. This document explains what permissions the app uses, why they are needed, and how your privacy is respected.
@@ -23,7 +23,7 @@ Thank you for using the **Jordan Prayer Times** app. This document explains what
 
 ### **Permissions and Usage**
 
-The following permissions are requested for the app to function properly:
+Permissions are **optional and contextual** — the app only requests a permission when you use the feature that requires it. No permission is required upfront to install or run the app.
 
 #### **Essential Permissions**
 
@@ -75,6 +75,17 @@ The following permissions are requested for the app to function properly:
       - ✅ Only accessed when you open the Qibla tab
     - **Fallback**: If location permission is denied, the app uses Amman, Jordan as the default location.
     - **Control**: You can revoke this permission at any time in your device settings without affecting other app features.
+
+11. **`BIND_DEVICE_ADMIN`** (Device Administrator — Optional)
+    - **Purpose**: Allows the app to register as a Device Administrator to prevent Android OEM battery optimizations from killing scheduled prayer alarms.
+    - **Usage**:
+      - ✅ Entirely optional — you are shown a clear explanation before activating this
+      - ✅ Only used to protect alarm reliability on devices with aggressive battery management (e.g., Xiaomi, Samsung, Huawei)
+      - ✅ Does NOT grant the app access to your device data, contacts, camera, or any personal information
+      - ✅ Does NOT allow remote wipe, lock, or any device management actions
+      - ✅ Can be deactivated at any time in Android Settings → Security → Device Admin Apps → Jordan Prayer Times → Deactivate
+    - **Why it exists**: Some OEM Android versions aggressively kill background apps, causing missed Fajr alarms. This permission is the standard Android mechanism to prevent that.
+    - **Control**: Deactivating Device Admin does not affect any other app features.
 
 ---
 
@@ -142,7 +153,7 @@ The app stores the following data LOCALLY on your device:
 
 1. **Prayer Times** - Monthly cache of prayer times for your selected city
 2. **Selected City** - Your chosen city in Jordan
-3. **App Settings** - Language preference, theme mode, notification settings, selected Athan sound
+3. **App Settings** - Language preference, theme mode, notification settings, selected Athan sound, Device Admin preference
 4. **Quran Bookmarks** - Your saved Quran bookmarks with color categories
 5. **Onboarding Status** - Whether you've completed the first-time tutorial
 6. **Sync Status** - Last successful sync timestamp
@@ -181,8 +192,18 @@ The app stores the following data LOCALLY on your device:
 
 #### **5. Notifications**
 - Prayer time alerts with customizable Athan sounds
+- Persistent notification keeps alarms running even when the app is closed or removed from recents
+- Tomorrow's alarms are automatically rescheduled after the last prayer fires — ensuring you never miss Fajr
 - All notification preferences stored locally
 - No notification data is tracked or shared
+
+#### **6. Wear OS Companion App**
+- The app includes an optional Wear OS companion for Pixel Watch and other Wear OS smartwatches
+- **Data synced to watch**: Selected city name and prayer times (local device-to-device communication via Android Wear Data Layer API)
+- **No internet access** is used by the Wear OS app — it receives data exclusively from the phone app
+- **No personal data** is collected or transmitted
+- Prayer time notifications can be sent to your watch when the phone app fires alarms
+- Disabling the Wear OS app does not affect the phone app in any way
 
 ---
 
@@ -206,6 +227,7 @@ This app does not knowingly collect any personal information from children. The 
 We may update this Privacy Policy from time to time to reflect changes in app features or legal requirements. Any changes will be reflected in this document with an updated "Last Updated" date.
 
 **Version History:**
+- **2.3.0** (28/04/2026): Added Wear OS companion app, Device Admin option, persistent notifications, contextual permissions
 - **2.0.0** (18/11/2025): Updated for Qibla compass, Quran viewer, and new permissions
 - **1.0.x** (15/12/2024): Initial version
 
