@@ -1,8 +1,10 @@
-## **Privacy Policy for Jordan Prayer Times App**
+## **Privacy Policy for Jordan Prayer Times App and Watch Apps**
 
 **Last Updated: 28/04/2026**
 **App Version: 2.3.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
+**Wear OS Version: 2.3.0**
+**Wear OS Developer: Hazem Afaneh**
 
 Thank you for using the **Jordan Prayer Times** app. This document explains what permissions the app uses, why they are needed, and how your privacy is respected.
 
@@ -243,9 +245,11 @@ The **Jordan Prayer Times** app is developed and owned by **Munes Bani Fawaz** (
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact:
 
-- **Developer**: Munes Bani Fawaz (MrGiveItAwayTPK)
+- **Lead Developer**: Munes Bani Fawaz (MrGiveItAwayTPK)
 - **Email**: m.banifawaz@outlook.com
-- **GitHub**: https://github.com/mbanifawaz/Jordan_Prayer_Times_App
+
+- **Wear OS Developer**: Hazem Afaneh
+- **Email**: hazemafaneh@gmail.com
 
 ---
 
