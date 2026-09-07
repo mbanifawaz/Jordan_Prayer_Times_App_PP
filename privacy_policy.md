@@ -1,9 +1,9 @@
 ## **Privacy Policy for Jordan Prayer Times App and Watch Apps**
 
-**Last Updated: 28/04/2026**
-**App Version: 2.3.0**
+**Last Updated: 07/09/2026**
+**App Version: 2.6.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
-**Wear OS Version: 2.3.0**
+**Wear OS Version: 2.6.0**
 **Wear OS Developer: Hazem Afaneh**
 
 Thank you for using the **Jordan Prayer Times** app. This document explains what permissions the app uses, why they are needed, and how your privacy is respected.
@@ -58,12 +58,16 @@ Permissions are **optional and contextual** — the app only requests a permissi
    - **Usage**: Sends prayer time reminders to the notification panel.
 
 8. **`USE_FULL_SCREEN_INTENT`**
-   - **Purpose**: Displays prayer time notifications on the lock screen.
-   - **Usage**: Shows alarms over the lock screen to ensure you don't miss prayer times. This is a standard permission for alarm clock apps.
+   - **Purpose**: Displays the prayer alarm over the lock screen.
+   - **Usage**: When a prayer time arrives, the alarm screen appears over the lock screen — showing the prayer name, the time, and a Stop button — the same way an alarm clock app does. Nothing is transmitted; the screen is drawn locally.
 
 9. **`FOREGROUND_SERVICE`** and **`FOREGROUND_SERVICE_MEDIA_PLAYBACK`**
    - **Purpose**: Allows the app to play Athan (call to prayer) audio in the background.
    - **Usage**: Ensures Athan sounds play even when the app is not in the foreground.
+
+10. **`TURN_SCREEN_ON`**
+    - **Purpose**: Wakes the screen when a prayer alarm fires.
+    - **Usage**: Turns the display on so the alarm screen is visible, as an alarm clock does. Used only at the moment an alarm fires.
 
 #### **Optional Permissions (Feature-Specific)**
 
@@ -78,16 +82,26 @@ Permissions are **optional and contextual** — the app only requests a permissi
     - **Fallback**: If location permission is denied, the app uses Amman, Jordan as the default location.
     - **Control**: You can revoke this permission at any time in your device settings without affecting other app features.
 
-11. **`BIND_DEVICE_ADMIN`** (Device Administrator — Optional)
-    - **Purpose**: Allows the app to register as a Device Administrator to prevent Android OEM battery optimizations from killing scheduled prayer alarms.
+12. **`SYSTEM_ALERT_WINDOW`** (Display Over Other Apps — Optional)
+    - **Purpose**: Lets the prayer alarm screen appear while you are using another app.
     - **Usage**:
-      - ✅ Entirely optional — you are shown a clear explanation before activating this
-      - ✅ Only used to protect alarm reliability on devices with aggressive battery management (e.g., Xiaomi, Samsung, Huawei)
-      - ✅ Does NOT grant the app access to your device data, contacts, camera, or any personal information
-      - ✅ Does NOT allow remote wipe, lock, or any device management actions
-      - ✅ Can be deactivated at any time in Android Settings → Security → Device Admin Apps → Jordan Prayer Times → Deactivate
-    - **Why it exists**: Some OEM Android versions aggressively kill background apps, causing missed Fajr alarms. This permission is the standard Android mechanism to prevent that.
-    - **Control**: Deactivating Device Admin does not affect any other app features.
+      - ✅ Entirely optional — the app explains it before sending you to the setting
+      - ✅ Used only at the moment a prayer alarm fires, to show the alarm screen
+      - ✅ The app never draws anything over other apps at any other time
+      - ✅ Nothing is read from the screen or from other apps
+    - **Without it**: The alarm still covers the lock screen and still shows a notification; it simply cannot appear on top of an app you are actively using.
+
+13. **`ACCESS_NOTIFICATION_POLICY`** (Do Not Disturb Access — Optional)
+    - **Purpose**: Lets the Athan sound while your phone is in Do Not Disturb.
+    - **Usage**:
+      - ✅ Entirely optional
+      - ✅ Used only to mark the prayer notification channel as allowed to bypass Do Not Disturb
+      - ✅ The app does not change your Do Not Disturb settings, schedules, or any other notification policy
+    - **Without it**: Prayer alarms follow your Do Not Disturb setting like any other notification.
+
+#### **Device-Specific Autostart Settings**
+
+Some manufacturers (Xiaomi, Oppo, Vivo, Huawei, TECNO, Infinix and others) stop background apps beyond standard Android rules, which can prevent prayer alarms from firing. On these devices the app offers to open the manufacturer's own autostart screen so you can allow it. This is not a permission the app holds: it only opens a system settings screen, and the app reads nothing from it.
 
 ---
 
