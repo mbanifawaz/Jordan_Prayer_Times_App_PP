@@ -30,7 +30,7 @@ Permissions are **optional and contextual** — the app only requests a permissi
 #### **Essential Permissions**
 
 1. **`INTERNET`**
-   - **Purpose**: To fetch prayer times from the official Jordanian Ministry of Awqaf website (awqaf.gov.jo) and download Quran content.
+   - **Purpose**: To download the published prayer times from GitHub and to download Quran content.
    - **Usage**: Downloads prayer time data and Quran resources. No personal data is sent.
 
 2. **`RECEIVE_BOOT_COMPLETED`**
@@ -109,7 +109,7 @@ Some manufacturers (Xiaomi, Oppo, Vivo, Huawei, TECNO, Infinix and others) stop 
 
 The app runs background services every **6 hours** for the following purposes:
 
-- **Prayer Time Synchronization**: Fetches monthly prayer times from the Jordanian Ministry of Awqaf (awqaf.gov.jo) and caches them locally.
+- **Prayer Time Synchronization**: Downloads the published monthly prayer times from GitHub and caches them locally.
 - **Alarm Rescheduling**: Updates prayer alarms based on fresh data.
 - **Retry Logic**: If sync fails, retries every 15 minutes until successful.
 - **Alarm Check**: Confirms today's prayer alarms are still scheduled and re-schedules any that the device dropped.
@@ -147,8 +147,9 @@ The app includes a complete Holy Quran viewer that downloads the following conte
 The app uses the following third-party services:
 
 1. **Prayer Times Data (GitHub)**
-   - **Purpose**: Fetching prayer times for Jordanian cities. The times originate from the Jordanian Ministry of Awqaf (awqaf.gov.jo) and are published by the developer to a public GitHub repository, which is what the app reads
-   - **Requests go to**: `api.github.com`
+   - **How the data gets there**: A separate service run by the developer reads the official prayer times from the Jordanian Ministry of Awqaf website (awqaf.gov.jo) and publishes them to a GitHub repository. That service runs independently of the app — your device never contacts awqaf.gov.jo
+   - **What the app does**: The app reads those published files from GitHub
+   - **Requests go to**: `api.github.com`, authenticated with a credential built into the app. The credential identifies the app, not you, and grants read access to the prayer times data only
    - **Data sent**: The city and month being requested. No account, name, contact detail or device identifier is sent
    - **Data received**: Prayer times for that city and month, plus the city list and any in-app announcement
    - **Note**: As with any internet request, GitHub can see the IP address the request comes from. This is standard for any app that downloads data and is governed by GitHub's own privacy policy
@@ -221,7 +222,7 @@ When you choose a sound for prayer alarms or reminders, the app lists the alarm,
 ### **Features and Privacy**
 
 #### **1. Prayer Times**
-- Fetched from official Ministry of Awqaf source
+- Sourced from the official Ministry of Awqaf times, published to GitHub by a separate service the developer runs, and read from there by the app
 - Cached locally by month for offline use, with the next month fetched in advance near the end of a month
 - Synced automatically every 6 hours
 
