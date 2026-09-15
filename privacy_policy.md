@@ -1,7 +1,7 @@
 ## **Privacy Policy for Jordan Prayer Times App and Watch Apps**
 
-**Last Updated: 07/09/2026**
-**App Version: 2.6.0**
+**Last Updated: 15/09/2026**
+**App Version: 3.0.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
 **Wear OS Version: 2.6.0**
 **Wear OS Developer: Hazem Afaneh**
@@ -114,6 +114,8 @@ The app runs background services every **6 hours** for the following purposes:
 - **Retry Logic**: If sync fails, retries every 15 minutes until successful.
 - **Alarm Check**: Confirms today's prayer alarms are still scheduled and re-schedules any that the device dropped.
 
+In addition, two checks run **entirely on your device with no internet access**: one every two hours, and one shortly before each prayer. Both simply re-read the prayer times already cached on your device and re-set any alarm that was dropped, so the app keeps working for days or weeks without being opened.
+
 These background services strictly follow Android's **WorkManager** policies to optimize battery usage (96% more efficient than previous versions).
 
 ---
@@ -177,15 +179,16 @@ The app stores the following data LOCALLY on your device:
 
 1. **Prayer Times** - Monthly cache of prayer times for your selected city
 2. **Selected City** - Your chosen city in Jordan
-3. **App Settings** - Language preference, theme mode, clock format (12/24-hour), Hijri date adjustment, notification settings, selected sounds, alarm volume, which prayers have alarms enabled
-4. **Reminder Settings** - Whether the wudu reminder is on and how early it fires; whether the morning, evening and before-sleep adhkar reminders are on, their timing and their sound
-5. **Adhkar Progress** - How many times you have counted each dhikr today, and which chapters you marked as favourites
-6. **Quran Bookmarks** - Your saved Quran bookmarks with color categories
-7. **Onboarding Status** - Whether you've completed the first-time tutorial
-8. **Sync Status** - Last successful sync timestamp
-9. **Alarm Records** - For each prayer, the time its alarm was set for and the time it actually fired. Used to tell you when your phone prevented an alarm from firing
-10. **Diagnostics Log** - A local record of app and alarm events (see "Diagnostics Log" below)
-11. **Dismissed Notices** - The IDs of in-app announcements you have already closed, so they are not shown again
+3. **App Settings** - Language preference, theme mode, clock format (12/24-hour), Hijri date adjustment, notification settings, selected sounds, alarm volume (overall and per prayer), whether alarms vibrate, which prayers have alarms enabled, and whether the optional sunrise alarm is on
+4. **Reminder Settings** - Whether the wudu reminder is on and how early it fires; whether the morning, evening and before-sleep adhkar reminders are on, their timing and their sound; whether the Friday (Jumu'ah) reminder is on and how early; whether the Ramadan suhoor and iftar reminders are on and how early
+5. **Widget Settings** - The theme, background transparency, text colours and language you chose for the home screen widgets
+6. **Adhkar Progress** - How many times you have counted each dhikr today, and which chapters you marked as favourites
+7. **Quran Bookmarks** - Your saved Quran bookmarks with color categories
+8. **Onboarding Status** - Whether you've completed the first-time tutorial
+9. **Sync Status** - Last successful sync timestamp
+10. **Alarm Records** - For each alarm and reminder, the time it was set for, the time it actually fired and how late it was. Roughly the last week is kept, and it is what the app shows you under "Recent alarms" to tell you when your phone prevented an alarm from firing
+11. **Diagnostics Log** - A local record of app and alarm events (see "Diagnostics Log" below)
+12. **Dismissed Notices** - The IDs of in-app announcements you have already closed, so they are not shown again
 
 **Important:**
 - All data is stored using Android's SharedPreferences and app-specific storage
@@ -208,14 +211,23 @@ To help diagnose missed prayer alarms, the app keeps a log of its own activity o
 
 ---
 
-### **Reading Your Device's Ringtones**
+### **Sounds You Choose**
 
-When you choose a sound for prayer alarms or reminders, the app lists the alarm, ringtone and notification tones installed on your device so you can pick one of your own instead of a bundled Athan.
+A prayer alarm or a reminder can play one of the bundled Athan recitations, the bundled chime, one of your device's own tones, or an audio file you pick yourself.
 
-- The app reads only the **names and locations of those tones** from Android's ringtone list
-- It does **not** read your music, recordings, downloads, or any other files
-- Your chosen sound is stored locally so it can be played when an alarm fires
-- No audio and no file information is transmitted anywhere
+**Your device's ringtones**
+
+- The app reads only the **names and locations** of the alarm, ringtone and notification tones from Android's ringtone list
+- It does **not** browse your music, recordings or downloads to build that list
+
+**An audio file you pick**
+
+- Choosing "Choose a file from this device" opens **Android's own file picker**. The app cannot see your files: it receives only the single file you select, and only because you selected it
+- Android grants the app long-lived read access to **that one file**, which the app keeps so the alarm can still play it days later or after a restart. It holds no access to anything else
+- When you change that setting to a different sound, the app **drops the file from its list and hands that access back**
+- The file is read on your device to play it. It is **never copied, uploaded or transmitted anywhere**
+
+Your chosen sound is stored locally as a reference to the file, so it can be played when an alarm fires.
 
 ---
 
@@ -223,7 +235,7 @@ When you choose a sound for prayer alarms or reminders, the app lists the alarm,
 
 #### **1. Prayer Times**
 - Sourced from the official Ministry of Awqaf times, published to GitHub by a separate service the developer runs, and read from there by the app
-- Cached locally by month for offline use, with the next month fetched in advance near the end of a month
+- Cached locally by month for offline use — the app takes whichever months are published, so it usually holds more than one and keeps working across a month boundary
 - Synced automatically every 6 hours
 
 #### **2. Qibla Compass**
@@ -245,8 +257,9 @@ When you choose a sound for prayer alarms or reminders, the app lists the alarm,
 - No reading or counting activity is tracked or shared
 
 #### **5. Home Screen Widgets**
-- Two optional widgets: the next prayer with a countdown, and today's five prayer times
+- Two optional widgets: the next prayer with a countdown, and today's prayer times
 - Both read the prayer times already cached on your device and need no internet
+- Their theme, background transparency, text colours and language are your choice and are stored locally
 - Widgets contain no personal data and send nothing anywhere
 
 #### **6. Multi-Language Support**
@@ -254,16 +267,24 @@ When you choose a sound for prayer alarms or reminders, the app lists the alarm,
 - Automatic RTL layout for Arabic
 - No data sent regarding language choice
 
-#### **7. Notifications**
+#### **7. Friday and Ramadan Reminders**
+- An optional reminder before Jumu'ah, which fires on Fridays only and is worked out from your cached Dhuhr time
+- Optional suhoor and iftar reminders that fire only during Ramadan
+- Whether it is Ramadan is determined **on your device**, from the device's own Islamic calendar and the Hijri adjustment you set. Nothing is requested from the internet to decide this
+- Both are off unless you turn them on, and their settings are stored locally
+
+#### **8. Notifications**
 - Prayer time alerts with your choice of Athan recitation, a bundled chime, or a ringtone from your device
 - Alarms are scheduled through Android's alarm clock system, so they fire on time even when the app is closed. This is why the alarm icon appears in your status bar
 - When a prayer arrives, the alarm screen appears over the lock screen and the Athan plays
 - The app checks regularly that its alarms are still set, re-schedules any that your phone dropped, and tells you on the prayer screen if one was missed
 - Tomorrow's alarms are automatically rescheduled after the last prayer fires — ensuring you never miss Fajr
 - An optional wudu reminder can fire 5, 10 or 15 minutes before each prayer
+- An alarm can be snoozed for five minutes, or silenced with a volume key
+- One setting decides whether alarms and reminders vibrate as well as sound
 - All notification preferences stored locally. No notification data is tracked or shared
 
-#### **8. Wear OS Companion App**
+#### **9. Wear OS Companion App**
 - The app includes an optional Wear OS companion for Pixel Watch and other Wear OS smartwatches
 - **Data synced to watch**: Selected city name and prayer times (local device-to-device communication via Android Wear Data Layer API)
 - **No internet access** is used by the Wear OS app — it receives data exclusively from the phone app
@@ -293,6 +314,7 @@ This app does not knowingly collect any personal information from children. The 
 We may update this Privacy Policy from time to time to reflect changes in app features or legal requirements. Any changes will be reflected in this document with an updated "Last Updated" date.
 
 **Version History:**
+- **3.0.0** (15/09/2026): Redesigned home screen and settings, with a help section in the app. Alarms now keep scheduling themselves without the app being opened, using checks that run on your device with no internet. You can pick **any audio file on your device** as an alarm sound — chosen through Android's own file picker, read only to play it, and released when you change that setting (see "Sounds You Choose"). Added a Friday (Jumu'ah) reminder and Ramadan suhoor and iftar reminders, both worked out on your device; an optional sunrise alarm; snooze; and one setting for vibration. Home screen widgets gained their own theme, transparency, text colours and language. The app now keeps a short record of which alarms actually fired and how late, shown under "Recent alarms". **No new permission is requested, and nothing new is sent anywhere**
 - **2.6.0** (07/09/2026): Alarms moved to Android's alarm clock system with a lock screen alarm screen; self-repairing alarms and missed-alarm reporting; Adhkar section with tasbih counter; wudu and adhkar reminders; two home screen widgets; device ringtones as alarm sounds; clock format and Hijri date settings; local diagnostics log; phone and tablet layouts. **Device Administrator was removed** — it granted no policies and did nothing for alarm reliability, so the app no longer requests it. Two further permissions the app never used were also removed
 - **2.3.0** (28/04/2026): Added Wear OS companion app, Device Admin option, persistent notifications, contextual permissions
 - **2.0.0** (18/11/2025): Updated for Qibla compass, Quran viewer, and new permissions
