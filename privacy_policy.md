@@ -161,8 +161,8 @@ The app uses the following third-party services:
 
 1. **Prayer Times Data (GitHub)**
    - **How the data gets there**: A separate service run by the developer reads the official prayer times from the Jordanian Ministry of Awqaf website (awqaf.gov.jo) and publishes them to a GitHub repository. That service runs independently of the app — your device never contacts awqaf.gov.jo
-   - **What the app does**: The app reads those published files from GitHub
-   - **Requests go to**: `api.github.com`, authenticated with a credential built into the app. The credential identifies the app, not you, and grants read access to the prayer times data only
+   - **What the app does**: The phone, watch and TV apps read those published files from GitHub. The repository is public, so the apps read it **without any account or credential** — there is nothing in the apps that identifies them or you
+   - **Requests go to**: `raw.githubusercontent.com` for the files, and `api.github.com` only to list which months are published
    - **Data sent**: The city and month being requested. No account, name, contact detail or device identifier is sent
    - **Data received**: Prayer times for that city and month, plus the city list and any in-app announcement
    - **Note**: As with any internet request, GitHub can see the IP address the request comes from. This is standard for any app that downloads data and is governed by GitHub's own privacy policy
@@ -302,13 +302,13 @@ Your chosen sound is stored locally as a reference to the file, so it can be pla
 - One setting decides whether alarms and reminders vibrate as well as sound
 - All notification preferences stored locally. No notification data is tracked or shared
 
-#### **9. Wear OS Companion App**
-- The app includes an optional Wear OS companion for Pixel Watch and other Wear OS smartwatches
-- **Data synced to watch**: Selected city name and prayer times (local device-to-device communication via Android Wear Data Layer API)
-- **No internet access** is used by the Wear OS app — it receives data exclusively from the phone app
-- **No personal data** is collected or transmitted
-- Prayer time notifications can be sent to your watch when the phone app fires alarms
-- Disabling the Wear OS app does not affect the phone app in any way
+#### **9. Wear OS App**
+- An optional app for Pixel Watch and other Wear OS smartwatches
+- **Internet**: The watch downloads the city list and the monthly prayer times itself, from the same public GitHub files as the phone app and in the same way (see "Prayer Times Data (GitHub)"). Only the city and month being requested are sent
+- **Stored on the watch only**: your chosen city, the downloaded prayer times, and whether notifications are on
+- **Permissions**: `INTERNET` (to download the times), `POST_NOTIFICATIONS`, `SCHEDULE_EXACT_ALARM`, `WAKE_LOCK` and `RECEIVE_BOOT_COMPLETED` (to notify you at each prayer, also after a restart)
+- **No personal data** is collected or transmitted, and the watch app does not exchange data with the phone app
+- Removing the Wear OS app does not affect the phone app in any way
 
 #### **10. Android TV App**
 - A separate app for Android TV: today's prayer times, a prayer calendar, and a screensaver showing the time, the Gregorian and Hijri dates and the next prayer over photos of Jordan's mosques and landmarks
@@ -339,6 +339,7 @@ This app does not knowingly collect any personal information from children. The 
 We may update this Privacy Policy from time to time to reflect changes in app features or legal requirements. Any changes will be reflected in this document with an updated "Last Updated" date.
 
 **Version History:**
+- **23/09/2026 — data without a credential**: The prayer times repository is now public, and the phone (3.0.0, build 28), Wear OS (2.6.0, build 29) and Android TV (3.0.0, build 27) apps read it without any built-in credential. Corrected the Wear OS section: the watch downloads the prayer times itself rather than receiving them from the phone
 - **Android TV 3.0.0** (23/09/2026): Added the Android TV app. It holds only the `INTERNET` and `ACCESS_NETWORK_STATE` permissions, stores its prayer times and settings on the TV, and requests screensaver photos from Wikimedia Commons only when online photos are chosen (see "Wikimedia Commons" and "Android TV App"). Nothing about you is sent anywhere
 - **3.0.0** (15/09/2026): Redesigned home screen and settings, with a help section in the app. Alarms now keep scheduling themselves without the app being opened, using checks that run on your device with no internet. You can pick **any audio file on your device** as an alarm sound — chosen through Android's own file picker, read only to play it, and released when you change that setting (see "Sounds You Choose"). Added a Friday (Jumu'ah) reminder and Ramadan suhoor and iftar reminders, both worked out on your device; an optional sunrise alarm; snooze; and one setting for vibration. Home screen widgets gained their own theme, transparency, text colours and language. The app now keeps a short record of which alarms actually fired and how late, shown under "Recent alarms". **No new permission is requested, and nothing new is sent anywhere**
 - **2.6.0** (07/09/2026): Alarms moved to Android's alarm clock system with a lock screen alarm screen; self-repairing alarms and missed-alarm reporting; Adhkar section with tasbih counter; wudu and adhkar reminders; two home screen widgets; device ringtones as alarm sounds; clock format and Hijri date settings; local diagnostics log; phone and tablet layouts. **Device Administrator was removed** — it granted no policies and did nothing for alarm reliability, so the app no longer requests it. Two further permissions the app never used were also removed
