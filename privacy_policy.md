@@ -1,10 +1,12 @@
-## **Privacy Policy for Jordan Prayer Times App and Watch Apps**
+## **Privacy Policy for Jordan Prayer Times App, Watch and TV Apps**
 
-**Last Updated: 15/09/2026**
+**Last Updated: 23/09/2026**
 **App Version: 3.0.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
 **Wear OS Version: 2.6.0**
-**Wear OS Developer: Hazem Afaneh**
+**Wear OS Developers: Hazem Afaneh and Munes Bani Fawaz**
+**Android TV Version: 3.0.0**
+**Android TV Developers: Ehab Amawi and Munes Bani Fawaz**
 
 Thank you for using the **Jordan Prayer Times** app. This document explains what permissions the app uses, why they are needed, and how your privacy is respected.
 
@@ -99,6 +101,15 @@ Permissions are **optional and contextual** — the app only requests a permissi
       - ✅ The app does not change your Do Not Disturb settings, schedules, or any other notification policy
     - **Without it**: Prayer alarms follow your Do Not Disturb setting like any other notification.
 
+#### **Android TV App Permissions**
+
+The Android TV app is a separate, much simpler app. It holds only two permissions:
+
+- **`INTERNET`** — to download the published prayer times and the city list from GitHub, and, if you choose online screensaver photos, the photos from Wikimedia Commons
+- **`ACCESS_NETWORK_STATE`** — to check whether the TV is connected before loading online photos, so it can show the built-in ones instead when it is offline. It reads only whether a working connection exists
+
+It has no location, notification, alarm, microphone, camera or storage permission.
+
 #### **Device-Specific Autostart Settings**
 
 Some manufacturers (Xiaomi, Oppo, Vivo, Huawei, TECNO, Infinix and others) stop background apps beyond standard Android rules, which can prevent prayer alarms from firing. On these devices the app offers to open the manufacturer's own autostart screen so you can allow it. This is not a permission the app holds: it only opens a system settings screen, and the app reads nothing from it.
@@ -166,7 +177,14 @@ The app uses the following third-party services:
    - **Source**: Hisnul Muslim (حصن المسلم) by Sa'id bin Ali bin Wahf al-Qahtani, taken from the open source muslim-data project
    - **Privacy**: The content ships inside the app. Nothing is downloaded and no request is made when you read adhkar
 
-4. **OpenStreetMap** (via flutter_map package)
+4. **Wikimedia Commons** (Android TV screensaver only)
+   - **Purpose**: The screensaver's photos of mosques and landmarks in Jordan and Al-Quds, when "Online" photos are chosen in the TV app's settings
+   - **Requests go to**: `thumb.wikimedia.org` / `upload.wikimedia.org`, for the photo files only
+   - **Data sent**: Nothing about you. The TV requests a fixed list of public photos; no account, identifier or setting is included
+   - **Note**: As with any internet request, Wikimedia can see the IP address the request comes from, governed by the Wikimedia Foundation's privacy policy. Choosing "Offline" photos, or having no connection, uses photos built into the app and makes no request at all
+   - **Credits**: Each photo is shown with its author and license on screen, as its Creative Commons license requires
+
+5. **OpenStreetMap** (via flutter_map package)
    - **Purpose**: Map tiles for the Qibla map view
    - **Data sent**: Map tile requests based on your location (when using Qibla map)
    - **Privacy**: No personal information is sent, only geographic coordinates for map tiles
@@ -292,6 +310,13 @@ Your chosen sound is stored locally as a reference to the file, so it can be pla
 - Prayer time notifications can be sent to your watch when the phone app fires alarms
 - Disabling the Wear OS app does not affect the phone app in any way
 
+#### **10. Android TV App**
+- A separate app for Android TV: today's prayer times, a prayer calendar, and a screensaver showing the time, the Gregorian and Hijri dates and the next prayer over photos of Jordan's mosques and landmarks
+- Prayer times come from the same published GitHub files as the phone app, requested the same way (city and month only). Every published month is **stored on the TV**, so it keeps working offline after the first setup
+- Stored **on the TV only**: the downloaded prayer times and city list, your chosen city, language, clock format, Hijri date adjustment, whether screensaver photos are online or built-in, and the slideshow interval. Online screensaver photos are also cached temporarily in the app's cache
+- **No location, no account, no analytics and no advertising.** Nothing is uploaded, and the TV app does not communicate with the phone or watch apps
+- All of it is deleted when you uninstall the app, or from the TV's Settings › Apps › Jordan Prayer Times › Clear data
+
 ---
 
 ### **Your Privacy Rights**
@@ -314,6 +339,7 @@ This app does not knowingly collect any personal information from children. The 
 We may update this Privacy Policy from time to time to reflect changes in app features or legal requirements. Any changes will be reflected in this document with an updated "Last Updated" date.
 
 **Version History:**
+- **Android TV 3.0.0** (23/09/2026): Added the Android TV app. It holds only the `INTERNET` and `ACCESS_NETWORK_STATE` permissions, stores its prayer times and settings on the TV, and requests screensaver photos from Wikimedia Commons only when online photos are chosen (see "Wikimedia Commons" and "Android TV App"). Nothing about you is sent anywhere
 - **3.0.0** (15/09/2026): Redesigned home screen and settings, with a help section in the app. Alarms now keep scheduling themselves without the app being opened, using checks that run on your device with no internet. You can pick **any audio file on your device** as an alarm sound — chosen through Android's own file picker, read only to play it, and released when you change that setting (see "Sounds You Choose"). Added a Friday (Jumu'ah) reminder and Ramadan suhoor and iftar reminders, both worked out on your device; an optional sunrise alarm; snooze; and one setting for vibration. Home screen widgets gained their own theme, transparency, text colours and language. The app now keeps a short record of which alarms actually fired and how late, shown under "Recent alarms". **No new permission is requested, and nothing new is sent anywhere**
 - **2.6.0** (07/09/2026): Alarms moved to Android's alarm clock system with a lock screen alarm screen; self-repairing alarms and missed-alarm reporting; Adhkar section with tasbih counter; wudu and adhkar reminders; two home screen widgets; device ringtones as alarm sounds; clock format and Hijri date settings; local diagnostics log; phone and tablet layouts. **Device Administrator was removed** — it granted no policies and did nothing for alarm reliability, so the app no longer requests it. Two further permissions the app never used were also removed
 - **2.3.0** (28/04/2026): Added Wear OS companion app, Device Admin option, persistent notifications, contextual permissions
@@ -324,7 +350,7 @@ We may update this Privacy Policy from time to time to reflect changes in app fe
 
 ### **Ownership and Developer Rights**
 
-The **Jordan Prayer Times** app is developed and owned by **Munes Bani Fawaz** (MrGiveItAwayTPK). All rights, including the app's design, source code, and intellectual property, belong to the developer.
+The **Jordan Prayer Times** app is developed and owned by **Munes Bani Fawaz** (MrGiveItAwayTPK), with the Wear OS app developed together with **Hazem Afaneh** and the Android TV app together with **Ehab Amawi**. All rights, including the app's design, source code, and intellectual property, belong to the developer.
 
 ---
 
@@ -335,8 +361,11 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 - **Lead Developer**: Munes Bani Fawaz (MrGiveItAwayTPK)
 - **Email**: m.banifawaz@outlook.com
 
-- **Wear OS Developer**: Hazem Afaneh
+- **Wear OS Developers**: Hazem Afaneh and Munes Bani Fawaz
 - **Email**: hazemafaneh@gmail.com
+
+- **Android TV Developers**: Ehab Amawi and Munes Bani Fawaz
+- **Email**: m.banifawaz@outlook.com
 
 ---
 
