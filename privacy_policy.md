@@ -1,9 +1,9 @@
 ## **Privacy Policy for Jordan Prayer Times App, Watch and TV Apps**
 
-**Last Updated: 23/09/2026**
+**Last Updated: 25/09/2026**
 **App Version: 3.0.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
-**Wear OS Version: 2.6.0**
+**Wear OS Version: 3.0.0**
 **Wear OS Developers: Hazem Afaneh and Munes Bani Fawaz**
 **Android TV Version: 3.0.0**
 **Android TV Developers: Ehab Amawi and Munes Bani Fawaz**
@@ -103,10 +103,13 @@ Permissions are **optional and contextual** — the app only requests a permissi
 
 #### **Android TV App Permissions**
 
-The Android TV app is a separate, much simpler app. It holds only two permissions:
+The Android TV app is a separate, much simpler app. It holds these permissions:
 
 - **`INTERNET`** — to download the published prayer times and the city list from GitHub, and, if you choose online screensaver photos, the photos from Wikimedia Commons
 - **`ACCESS_NETWORK_STATE`** — to check whether the TV is connected before loading online photos, so it can show the built-in ones instead when it is offline. It reads only whether a working connection exists
+- **`WRITE_SECURE_SETTINGS`** and **`WRITE_SETTINGS`** (optional) — used only when you choose **Settings › Screensaver** in the app, to make Jordan Prayer Times the TV's screensaver, to set how long the TV waits before starting it, and to put back your previous screensaver. Many TVs, including Google TV, hide the screensaver choice, so the app sets it itself. The app changes only those screensaver settings and nothing else
+  - These permissions cannot be granted by an app on its own. The first time, you turn on **USB debugging** on the TV and the app connects **to the TV itself** (its own local debugging connection, never over the internet or to another device). The TV asks you to allow it; the app then grants itself these two permissions and nothing more, after which you can turn USB debugging off again
+  - The key the TV asks you to allow is created on the TV and stays in the app's private storage. Nothing is sent anywhere
 
 It has no location, notification, alarm, microphone, camera or storage permission.
 
@@ -315,6 +318,7 @@ Your chosen sound is stored locally as a reference to the file, so it can be pla
 - Prayer times come from the same published GitHub files as the phone app, requested the same way (city and month only). Every published month is **stored on the TV**, so it keeps working offline after the first setup
 - Stored **on the TV only**: the downloaded prayer times and city list, your chosen city, language, clock format, Hijri date adjustment, whether screensaver photos are online or built-in, and the slideshow interval. Online screensaver photos are also cached temporarily in the app's cache
 - **No location, no account, no analytics and no advertising.** Nothing is uploaded, and the TV app does not communicate with the phone or watch apps
+- Also stored on the TV, if you use Settings › Screensaver: the screensaver that was set before, so it can be restored, and the key used for the one-time local connection described in "Android TV App Permissions"
 - All of it is deleted when you uninstall the app, or from the TV's Settings › Apps › Jordan Prayer Times › Clear data
 
 ---
@@ -339,6 +343,7 @@ This app does not knowingly collect any personal information from children. The 
 We may update this Privacy Policy from time to time to reflect changes in app features or legal requirements. Any changes will be reflected in this document with an updated "Last Updated" date.
 
 **Version History:**
+- **25/09/2026 — Wear OS 3.0.0 and Android TV screensaver setup**: The Wear OS app is now version 3.0.0 (build 31): its text fits round screens at every font size, with no change to what it stores or sends. The Android TV app (build 30) can set itself as the TV's screensaver from its settings, using the optional `WRITE_SECURE_SETTINGS` and `WRITE_SETTINGS` permissions granted once through the TV's own USB debugging connection (see "Android TV App Permissions"). Nothing about you is sent anywhere
 - **23/09/2026 — data without a credential**: The prayer times repository is now public, and the phone (3.0.0, build 28), Wear OS (2.6.0, build 29) and Android TV (3.0.0, build 27) apps read it without any built-in credential. Corrected the Wear OS section: the watch downloads the prayer times itself rather than receiving them from the phone
 - **Android TV 3.0.0** (23/09/2026): Added the Android TV app. It holds only the `INTERNET` and `ACCESS_NETWORK_STATE` permissions, stores its prayer times and settings on the TV, and requests screensaver photos from Wikimedia Commons only when online photos are chosen (see "Wikimedia Commons" and "Android TV App"). Nothing about you is sent anywhere
 - **3.0.0** (15/09/2026): Redesigned home screen and settings, with a help section in the app. Alarms now keep scheduling themselves without the app being opened, using checks that run on your device with no internet. You can pick **any audio file on your device** as an alarm sound — chosen through Android's own file picker, read only to play it, and released when you change that setting (see "Sounds You Choose"). Added a Friday (Jumu'ah) reminder and Ramadan suhoor and iftar reminders, both worked out on your device; an optional sunrise alarm; snooze; and one setting for vibration. Home screen widgets gained their own theme, transparency, text colours and language. The app now keeps a short record of which alarms actually fired and how late, shown under "Recent alarms". **No new permission is requested, and nothing new is sent anywhere**
