@@ -4,9 +4,9 @@
 **App Version: 3.0.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
 **Wear OS Version: 3.0.0**
-**Wear OS Developers: Hazem Afaneh and Munes Bani Fawaz**
+**Wear OS Developers: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)**
 **Android TV Version: 3.0.0**
-**Android TV Developers: Ehab Amawi and Munes Bani Fawaz**
+**Android TV Developers: Ehab Amawi (idea & first build) and Munes Bani Fawaz (continued development & enhancements)**
 
 Thank you for using the **Jordan Prayer Times** app. This document explains what permissions the app uses, why they are needed, and how your privacy is respected.
 
@@ -358,7 +358,7 @@ We may update this Privacy Policy from time to time to reflect changes in app fe
 
 ### **Ownership and Developer Rights**
 
-The **Jordan Prayer Times** app is developed and owned by **Munes Bani Fawaz** (MrGiveItAwayTPK), with the Wear OS app developed together with **Hazem Afaneh** and the Android TV app together with **Ehab Amawi**. All rights, including the app's design, source code, and intellectual property, belong to the developer.
+The **Jordan Prayer Times** app is developed and owned by **Munes Bani Fawaz** (MrGiveItAwayTPK). The Wear OS app was started by **Hazem Afaneh** (idea & first build) and the Android TV app by **Ehab Amawi** (idea & first build); Munes Bani Fawaz continues developing and enhancing both. All rights, including the app's design, source code, and intellectual property, belong to the developer.
 
 ---
 
@@ -369,10 +369,10 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 - **Lead Developer**: Munes Bani Fawaz (MrGiveItAwayTPK)
 - **Email**: m.banifawaz@outlook.com
 
-- **Wear OS Developers**: Hazem Afaneh and Munes Bani Fawaz
+- **Wear OS Developers**: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
 - **Email**: hazemafaneh@gmail.com
 
-- **Android TV Developers**: Ehab Amawi and Munes Bani Fawaz
+- **Android TV Developers**: Ehab Amawi (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
 - **Email**: m.banifawaz@outlook.com
 
 ---
