@@ -368,6 +368,8 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 
 - **Lead Developer**: Munes Bani Fawaz (MrGiveItAwayTPK)
 - **Email**: m.banifawaz@outlook.com
+- **Phone**: +962 78 933 6602
+- **LinkedIn**: https://www.linkedin.com/in/munes-bani-fawaz-799151204/
 
 - **Wear OS Developers**: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
 - **Email**: hazemafaneh@gmail.com
