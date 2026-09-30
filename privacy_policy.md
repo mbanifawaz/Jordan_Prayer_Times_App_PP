@@ -1,12 +1,12 @@
 ## **Privacy Policy for Jordan Prayer Times App, Watch and TV Apps**
 
-**Last Updated: 30/09/2026**
-**App Version: 3.0.0**
-**Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
-**Wear OS Version: 3.0.0**
-**Wear OS Developers: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)**
-**Android TV Version: 3.0.0**
-**Android TV Developers: Ehab Amawi (idea & first build) and Munes Bani Fawaz (continued development & enhancements)**
+- **Last Updated: 30/09/2026**
+- **App Version: 3.0.0**
+- **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
+- **Wear OS Version: 3.0.0**
+- **Wear OS Developers: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)**
+- **Android TV Version: 3.0.0**
+- **Android TV Developers: Ehab Amawi (idea & first build) and Munes Bani Fawaz (continued development & enhancements)**
 
 Thank you for using the **Jordan Prayer Times** app. This document explains what permissions the app uses, why they are needed, and how your privacy is respected.
 
