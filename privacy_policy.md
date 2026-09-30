@@ -1,6 +1,6 @@
 ## **Privacy Policy for Jordan Prayer Times App, Watch and TV Apps**
 
-**Last Updated: 25/09/2026**
+**Last Updated: 30/09/2026**
 **App Version: 3.0.0**
 **Developer: Munes Bani Fawaz (MrGiveItAwayTPK)**
 **Wear OS Version: 3.0.0**
@@ -109,6 +109,7 @@ The Android TV app is a separate, much simpler app. It holds these permissions:
 - **`ACCESS_NETWORK_STATE`** — to check whether the TV is connected before loading online photos, so it can show the built-in ones instead when it is offline. It reads only whether a working connection exists
 - **`WRITE_SECURE_SETTINGS`** and **`WRITE_SETTINGS`** (optional) — used only when you choose **Settings › Screensaver** in the app, to make Jordan Prayer Times the TV's screensaver, to set how long the TV waits before starting it, and to put back your previous screensaver. Many TVs, including Google TV, hide the screensaver choice, so the app sets it itself. The app changes only those screensaver settings and nothing else
   - These permissions cannot be granted by an app on its own. The first time, you turn on **USB debugging** on the TV and the app connects **to the TV itself** (its own local debugging connection, never over the internet or to another device). The TV asks you to allow it; the app then grants itself these two permissions and nothing more, after which you can turn USB debugging off again
+  - Some TVs offer only **Wireless debugging**, which an app on the TV cannot use by itself. There the app shows the steps to grant the same two permissions once from your own phone or computer on the same Wi-Fi (`adb pair`, then `adb shell pm grant …`). That connection is between your devices only; the app sends nothing, and you can turn Wireless debugging off again afterwards
   - The key the TV asks you to allow is created on the TV and stays in the app's private storage. Nothing is sent anywhere
 
 It has no location, notification, alarm, microphone, camera or storage permission.
@@ -343,6 +344,7 @@ This app does not knowingly collect any personal information from children. The 
 We may update this Privacy Policy from time to time to reflect changes in app features or legal requirements. Any changes will be reflected in this document with an updated "Last Updated" date.
 
 **Version History:**
+- **30/09/2026 — Android TV screensaver setup on more TVs**: The Android TV app (build 32) explains both ways to set the screensaver (the TV's own Screen saver menu, or letting the app set it), shows which debugging options are on, and covers TVs that offer only Wireless debugging, where the one-time grant is made from your own phone or computer. Area names can be shown in English. No new permissions, and nothing about you is sent anywhere
 - **25/09/2026 — Wear OS 3.0.0 and Android TV screensaver setup**: The Wear OS app is now version 3.0.0 (build 31): its text fits round screens at every font size, with no change to what it stores or sends. The Android TV app (build 30) can set itself as the TV's screensaver from its settings, using the optional `WRITE_SECURE_SETTINGS` and `WRITE_SETTINGS` permissions granted once through the TV's own USB debugging connection (see "Android TV App Permissions"). Nothing about you is sent anywhere
 - **23/09/2026 — data without a credential**: The prayer times repository is now public, and the phone (3.0.0, build 28), Wear OS (2.6.0, build 29) and Android TV (3.0.0, build 27) apps read it without any built-in credential. Corrected the Wear OS section: the watch downloads the prayer times itself rather than receiving them from the phone
 - **Android TV 3.0.0** (23/09/2026): Added the Android TV app. It holds only the `INTERNET` and `ACCESS_NETWORK_STATE` permissions, stores its prayer times and settings on the TV, and requests screensaver photos from Wikimedia Commons only when online photos are chosen (see "Wikimedia Commons" and "Android TV App"). Nothing about you is sent anywhere
