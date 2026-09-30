@@ -371,10 +371,14 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 - **Phone**: +962 789 336 602
 - **LinkedIn**: https://www.linkedin.com/in/munes-bani-fawaz-799151204/
 
+---
+
 - **Wear OS Developers**: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
 - **Email**: hazemafaneh@gmail.com
 - **Phone**: +962 789 301 961
 - **LinkedIn**: https://www.linkedin.com/in/hazem-afaneh-956521159/
+
+---
 
 - **Android TV Developers**: Ehab Amawi (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
 - **Email**: ehabamawi998@hotmail.com
