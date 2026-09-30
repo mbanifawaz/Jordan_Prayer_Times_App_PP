@@ -368,14 +368,18 @@ If you have any questions, concerns, or requests regarding this Privacy Policy o
 
 - **Lead Developer**: Munes Bani Fawaz (MrGiveItAwayTPK)
 - **Email**: m.banifawaz@outlook.com
-- **Phone**: +962 78 933 6602
+- **Phone**: +962 789 336 602
 - **LinkedIn**: https://www.linkedin.com/in/munes-bani-fawaz-799151204/
 
 - **Wear OS Developers**: Hazem Afaneh (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
 - **Email**: hazemafaneh@gmail.com
+- **Phone**: +962 789 301 961
+- **LinkedIn**: https://www.linkedin.com/in/hazem-afaneh-956521159/
 
 - **Android TV Developers**: Ehab Amawi (idea & first build) and Munes Bani Fawaz (continued development & enhancements)
-- **Email**: m.banifawaz@outlook.com
+- **Email**: ehabamawi998@hotmail.com
+- **Phone**: +962 775 924 221
+- **LinkedIn**: https://www.linkedin.com/in/ehab-al-amawi/
 
 ---
 
